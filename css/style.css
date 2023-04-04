@@ -1,0 +1,86 @@
+	body{
+			height: 100vh;
+			background-image: url('images/TheSunBank.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			margin: 0;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.container{
+			height: 400px;
+			width: 400px;
+			margin-top: 100px;
+			margin-left: 140px;
+			display: inline-block;
+		}
+		.h1-div{
+			font-size: 26px;
+			color: #FF4E00;
+			font-family: Poppins;
+			font-weight: 600;
+		}
+		.p1-div{
+			font-size: 16px;
+			color: rgb(255, 204, 0);
+			font-family: Poppins;
+			font-weight: 400;
+		}
+		.p2-div{
+			font-size: 12px;
+			color: rgb(255, 204, 0);
+			font-family: Poppins;
+			font-weight: 200;
+		}
+		.buttons{
+			display: flex;
+		}
+		.btn1{
+			flex: 1;
+		}
+		.btn1 button{
+			width: 120px;
+			margin-left: 60px;
+			font-size: 20px;
+			background-color: #FF4E00;
+			font-family: Poppins;
+			font-weight: 600;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			transition: opacity 0.2s;
+			padding: 4px;
+
+		}
+		.btn2{
+			flex: 1;
+			}
+		.btn2 button{
+			width: 120px;
+			background-color:#FFB114;
+			border-radius: 3px;
+			font-size: 20px;
+			font-family: Poppins;
+			font-weight: 600;
+			color: white;
+			border: none;
+			transition: opacity 0.2s;
+			padding: 4px;
+		}
+		.btn2 button:hover{
+			opacity: 0.8;
+		}
+		.btn2 button:active{
+			opacity: 0.4;
+		}
+		.btn1 button:hover{
+			opacity: 0.8;
+		}
+		.btn1 button:active{
+			opacity: 0.4;
+		}
+
+
+

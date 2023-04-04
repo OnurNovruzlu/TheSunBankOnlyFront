@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/dashboard.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: rgb(211,217,226);">
+    <!-- Main Page Header -->
+    <header class="main-page-header mb-3 bg-primary">
+        <!-- Container -->
+        <div class="container d-flex align-items-center">
+             <!-- Company Name -->
+             <div class="company-name">
+                The Sun Bank
+             </div>
+             <!-- End of Company Name -->
+             <!-- Naviagtion -->
+             <nav class="navigation">
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Payment History</a></li>
+                <li><a href="">Transaction History</a></li>
+             </nav>
+              <!-- End of Naviagtion -->
+              <!--Display Name-->
+              <div class="display-name ms-auto text-white">
+                <i class="fa-solid fa-circle text-success me-2"></i>Welcome <span>Onur Novruz</span>
+              </div>
+              <!--End of Display Name-->
+              <!-- Log Out Button -->
+              <a href="" class="btn btn-sm text-white ms-2">
+                <i class="fas fa-sign-out-alt me-1" aria-hidden="true"></i>Sign Out
+              </a>
+              <!-- End of Log Out Button -->
+        </div>
+        <!-- End of Container -->
+  </header>
+        <!--End of Main Page Header -->
+
+   <!--Start of Transact Offcanvas-->
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Transact</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+        <!--Offcanvas: Transact Body-->
+        <div class="offcanvas-body">
+            <small class="card-text">
+                Choose an option below to perform a transaction
+            </small>
+       <!--Transaction Type Drop Down List-->
+       <select name="transact-type" class="form-control my-3" id="transact-select" onclick="getTransaction()">
+        <option value="">--Select Transaction Type--</option>
+        <option value="payment">Payment</option>
+        <option value="transfer">Transfer</option>
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+       </select>
+       <!--End of Transaction Type Drop Down List-->
+       
+       <!-- Card: Payment Card -->
+       <div class="card" id="payment-card">
+        <!--Card Body-->
+        <div class="card-body">
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Account Holder / Beneficiary</label>
+                <input type="text" name="beneficiary" class="form-control" placeholder="Enter Account Holder / Beneficiary Name">
+            </div>
+            <!--End of Form Group-->
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Beneficiary Account Number</label>
+                <input type="text" name="account_number" class="form-control" placeholder="Enter Beneficiary Account No">
+            </div>
+            <!--End of Form Group-->
+
+            <!--Form Group-->
+            <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control" id="">
+                    <option value="">--Select Account--</option>
+                   </select>
+            </div>
+            <!--End of Form Group-->
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Reference</label>
+                <input type="text" name="reference" class="form-control" placeholder="Enter Reference">
+            </div>
+            <!--End of Form Group-->
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Enter Payment Amount</label>
+                <input type="text" name="payment_amount" class="form-control" placeholder="Enter Payment Amount">
+            </div>
+            <!--End of Form Group-->
+            <div class="form-group mb-2">
+               <button id="transact-pay-btn" class="btn btn-md">Pay</button>
+            </div>
+        </div>
+        <!--End of Card Body-->
+       </div>   
+      <!-- End of Card: Payment Card -->
+
+       <!-- Card: Transfer Card -->
+       <div class="card" id="transfer-card">
+        <!--Card Body-->
+        <div class="card-body">
+            <!--Form Group-->
+            <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control" id="">
+                    <option value="">--Select Account--</option>
+                   </select>
+            </div>
+            <!--End of Form Group-->
+            <!--Form Group-->
+            <div class="form-group">
+              <label for="">Select Account</label>
+              <select name="account_id" class="form-control" id="">
+                  <option value="">--Select Account--</option>
+                 </select>
+          </div>
+          <!--End of Form Group-->
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Enter Transfer Amount</label>
+                <input type="text" name="transfer_amount" class="form-control" placeholder="Enter Transfer Amount">
+            </div>
+            <!--End of Form Group-->
+            <div class="form-group mb-2">
+               <button id="transact-transfer-btn" class="btn btn-md">Transfer</button>
+            </div>
+        </div>
+        <!--End of Card Body-->
+       </div>   
+      <!-- End of Card: Transfer Card -->
+
+      <!-- Card: Deposit Card -->
+      <div class="card" id="deposit-card">
+        <!--Card Body-->
+        <div class="card-body">
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Enter Deposit Amount</label>
+                <input type="text" name="deposit_amount" class="form-control" placeholder="Enter Deposit Amount">
+            </div>
+            <!--End of Form Group-->
+            <!--Form Group-->
+            <div class="form-group">
+              <label for="">Select Account</label>
+              <select name="account_id" class="form-control" id="">
+                  <option value="">--Select Account--</option>
+                 </select>
+          </div><br>
+          <!--End of Form Group-->
+
+            <div class="form-group mb-2">
+               <button id="transact-deposit-btn" class="btn btn-md">Deposit</button>
+            </div>
+        </div>
+        <!--End of Card Body-->
+       </div>   
+      <!-- End of Card: Deposit Card -->
+
+      <!-- Card: Withdraw Card -->
+      <div class="card" id="withdraw-card">
+        <!--Card Body-->
+        <div class="card-body">
+
+            <!--Form Group-->
+            <div class="form-group mb-2">
+                <label for="">Enter Withdrawal Amount</label>
+                <input type="text" name="withdrawal_amount" class="form-control" placeholder="Enter Withdrawal Amount">
+            </div>
+            <!--End of Form Group-->
+            <!--Form Group-->
+            <div class="form-group">
+              <label for="">Select Account</label>
+              <select name="account_id" class="form-control" id="">
+                  <option value="">--Select Account--</option>
+                 </select>
+          </div><br>
+          <!--End of Form Group-->
+            <div class="form-group mb-2">
+               <button id="transact-deposit-btn" class="btn btn-md">Withdraw</button>
+            </div>
+        </div>
+        <!--End of Card Body-->
+       </div>   
+      <!-- End of Card: Withdraw Card -->
+      </div>
+    <!--End of Offcanvas: Transact Body-->
+  </div>
+   <!--End of Transact Offcanvas-->
+
+
+   <!--Right Side Offcanvas: Add accounts Form -->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Create / Add an Account</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <!--Offcanvas: Add Accounts Body-->
+    <div class="offcanvas-body">
+     <div class="card">
+      <!-- Card Body -->
+      <div class="card-body">
+      <form action="" class="add-account-form">
+        <!-- Form Group -->
+        <div class="form-group mb-3">
+          <label for="">Enter Account Name</label>
+          <input type="text" name="account_name" class="form-control" placeholder="Enter Account Name..">
+        </div>
+
+        <!-- End of Form Group -->
+         <!-- Form Group -->
+         <div class="form-group mb-3">
+          <label for="">Select Account Type</label><br>
+          <select name="account_type" class="form-control" id="">
+            <option value="">--Select Account Type--</option>
+            <option value="check">Check</option>
+            <option value="savings">Savings</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <button id="right-offcanvas-add-account" class="btn btn-md">Add Account</button>
+       </div>
+        <!-- End of Form Group -->
+      </form>
+    </div>
+      <!-- End of Card Body -->
+    </div>
+     </div>
+      
+    </div>
+    <!--End of Offcanvas: Add Accounts Body-->
+  </div>
+  <!-- End of Right Side Offcanvas: Add accounts Form -->
+        <!-- Container -->
+        <div class="container d-flex">
+            <!-- Add Account Button -->
+            <button id="add-account-btn" class="btn btn-lg shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+             <i class="fa fa-credit-card"></i> Add New Account</button>
+            <!-- End of Add Account Button -->
+            <!-- Transact Button -->
+            <button id="transact-btn" class="btn btn-lg ms-auto shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+               <i class="fa fa-wallet"></i> Transact</button>
+            <!-- End of Transact Button -->
+        </div>
+        <!-- End ofContainer -->
+        <!-- Container: Total Accounts Balance Display-->
+        <div class="container d-flex">
+            <h2 class="me-auto">Total Accounts Balance:</h2>
+            <h2 class="me-0">0.00</h2>
+        </div>
+        <!--End of Container: Total Accounts Balance Display-->
+
+        <!-- Container: Accordion Menu / Drop Down -->
+        <div class="container">
+            <!-- Accordion Menu / Drop Down -->
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Accordion Item #1
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Accordion Item #2
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Accordion Item #3
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
+              <!--End of Accordion Menu / Drop Down -->
+        </div>
+        <!-- End Container: Accordion Menu / Drop Down -->
+        <!-- Container: No Accounts -->
+        <div class="container">
+            <!-- Card: No Accounts -->
+            <div class="card no-accounts-card">
+                <!-- Card Body -->
+                <div class="card-body">
+                    <!-- Card Title -->
+                    <h1 class="card-title">
+                        <i class="fas fa-ban text-danger"></i>NO Registered Accounts
+                    </h1>
+                    <!-- End of Card Title -->
+
+                    <!-- Card-text -->
+                    <div class="card-text">
+                        You currently do not have any registered accounts. <br>
+                        Please click below to register / add a new  account.
+                    </div><br>
+                    <!--End of Card-text -->
+                    <!-- Add Account Button -->
+            <button id="" class="btn btn-primary btn-lg shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="fa fa-credit-card"></i> Add New Account</button>
+               <!-- End of Add Account Button -->
+                </div>
+                <!-- End of Card Body -->
+            </div>
+            <!--End of Card: No Accounts -->
+        </div>
+        <!-- End of Container: No Accounts -->
+</body>
+</html>

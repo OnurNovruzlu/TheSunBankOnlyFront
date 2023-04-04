@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    font-family: Comfortaa;
+}/*Main Body Styling*/
+body{
+    background-color: rgb(211,217,226);
+}
+.container{
+    margin: 10px auto;
+}
+/* <!-- Main Page Header --> */
+.main-page-header{
+    padding: 10px 0;
+}
+/*<!-- Company Name -->*/
+.main-page-header .company-name{
+    font-weight: 600;
+    color: white;
+}
+/* <!-- Naviagtion --> */
+.navigation{
+    margin-left: 20px;
+}
+.navigation li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 15px;
+}
+.navigation li a{
+    color: white;
+    text-decoration: none;
+}
+/*Display Name*/
+.display-name{
+    font-weight: 600;
+}
+/*Transact Button*/
+#transact-btn{
+    background-color: #FFB114;
+    border: 1px solid #543800;
+}
+/*Add Account Button */
+#add-account-btn{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}
+/*Offcanvas Background*/
+.offcanvas{
+    background: url('images/panelbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}/*Pay Button*/
+#transact-pay-btn{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}/*Transfer Button*/
+#transact-transfer-btn{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}/*Deposit Button*/
+#transact-deposit-btn{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}/*Withdraw Button*/
+#transact-withdraw-btn{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}
+/*Card: Payment card*/
+#payment-card{
+    display: none;
+}
+/*Card: Transfer card*/
+#transfer-card{
+    display: none;
+}
+/*Card: Deposit card*/
+#deposit-card{
+    display: none;
+}
+/*Card: Withdraw card*/
+#withdraw-card{
+    display: none;
+}
+/*Right Offcanvas Add Account Button*/
+#right-offcanvas-add-account{
+    background-color: #FF4E00;
+    border: 1px soldi #882B00;
+    color: white;
+}
+
+
+
+
+
+
